@@ -42,7 +42,7 @@ export default function TripFilters({ trips, onFilter }: Props) {
       filtered = filtered.filter((t) => t.type === type);
     }
     if (month) {
-      filtered = filtered.filter((t) => t.departure_months.includes(month));
+      filtered = filtered.filter((t) => (t.departure_months || []).includes(month));
     }
 
     onFilter(filtered);
